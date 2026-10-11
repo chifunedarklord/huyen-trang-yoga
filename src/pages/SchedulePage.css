@@ -1,0 +1,122 @@
+.schedule-page { min-height: 100vh; padding-bottom: var(--space-4xl); }
+
+.schedule-hero {
+  background: linear-gradient(160deg, var(--sage-700), var(--sage-900));
+  padding: 140px 0 60px;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+.schedule-hero h1 { color: white; margin: 8px 0 var(--space-md); }
+.schedule-hero p { color: var(--sage-200); }
+
+.classes-overview { margin-bottom: var(--space-2xl); }
+.classes-overview h2 { margin-bottom: var(--space-lg); }
+.classes-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+.class-mini-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--cream-200);
+  transition: all var(--transition-normal);
+}
+.class-mini-card:hover { border-color: var(--sage-300); box-shadow: var(--shadow-md); }
+.class-mini-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm); }
+.class-mini-price { font-weight: 700; color: var(--sage-600); font-size: 0.9rem; }
+.class-mini-card h4 { font-size: 0.95rem; margin-bottom: 6px; font-family: var(--font-sans); }
+.class-mini-meta {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.75rem; color: var(--text-muted);
+  margin-top: var(--space-sm);
+}
+
+.week-nav {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-xl);
+  border: 1px solid var(--cream-200);
+}
+.week-label { font-weight: 600; font-size: 1rem; color: var(--text-primary); min-width: 200px; text-align: center; }
+.week-nav-btn { color: var(--sage-600); }
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+.calendar-day {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--cream-200);
+  overflow: hidden;
+  min-height: 200px;
+  transition: border-color var(--transition-fast);
+}
+.calendar-day.today { border-color: var(--sage-400); box-shadow: 0 0 0 3px rgba(90,150,96,0.1); }
+
+.day-header {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: var(--space-sm);
+  background: var(--sage-50);
+  border-bottom: 1px solid var(--cream-200);
+}
+.day-name { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+.day-date { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.today-badge {
+  background: var(--sage-500);
+  color: white;
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+}
+
+.day-schedules { padding: var(--space-sm); display: flex; flex-direction: column; gap: 6px; }
+.no-schedule { font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: var(--space-md) 0; }
+
+.schedule-slot {
+  background: var(--sage-50);
+  border: 1px solid var(--sage-100);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: all var(--transition-fast);
+}
+.schedule-slot:hover { background: var(--sage-100); border-color: var(--sage-300); }
+.schedule-slot.booked { background: var(--cream-100); border-color: var(--earth-400); opacity: 0.85; }
+.slot-time { display: flex; align-items: center; gap: 3px; font-size: 0.7rem; color: var(--text-muted); }
+.slot-name { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
+.slot-room { font-size: 0.68rem; color: var(--text-muted); }
+.slot-price { font-size: 0.72rem; font-weight: 600; color: var(--sage-600); }
+.slot-book-btn { font-size: 0.72rem; padding: 4px 10px; }
+
+.login-prompt {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--sage-50);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--sage-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--sage-500);
+}
+.login-prompt h3 { color: var(--text-primary); }
+.login-prompt p { color: var(--text-muted); }
+
+@media (max-width: 1024px) {
+  .calendar-grid { grid-template-columns: repeat(4, 1fr); }
+  .classes-mini-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+  .classes-mini-grid { grid-template-columns: 1fr; }
+  .week-nav { gap: var(--space-md); }
+}

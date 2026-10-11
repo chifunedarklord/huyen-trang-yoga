@@ -1,0 +1,72 @@
+.class-card { display: flex; flex-direction: column; height: 100%; }
+
+.class-image-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--sage-100), var(--cream-200));
+  overflow: hidden;
+}
+.class-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.class-card:hover .class-img { transform: scale(1.05); }
+.class-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.class-level {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.class-info { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.class-name { font-size: 1.1rem; color: var(--text-primary); }
+.class-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.class-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.meta-item svg { color: var(--sage-500); }
+
+.class-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  gap: var(--space-sm);
+}
+.instructor {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.instructor svg { color: var(--sage-400); }
+.class-price { font-weight: 700; color: var(--sage-600); font-size: 1rem; }

@@ -1,0 +1,73 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--space-lg) var(--space-2xl);
+  position: relative;
+  background: linear-gradient(160deg, var(--sage-50) 0%, var(--cream-50) 100%);
+}
+.auth-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.auth-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sage-200), transparent 70%);
+  opacity: 0.4;
+}
+.auth-circle-1 { width: 500px; height: 500px; top: -150px; right: -100px; }
+.auth-circle-2 { width: 350px; height: 350px; bottom: -80px; left: -80px; }
+
+.auth-container { width: 100%; max-width: 440px; position: relative; z-index: 1; }
+.auth-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--cream-200);
+  animation: fadeInUp 0.5s var(--ease-gentle);
+}
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.auth-logo {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+.auth-logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--sage-200);
+  transition: transform var(--transition-normal);
+}
+.auth-logo:hover img { transform: scale(1.05) rotate(5deg); }
+.auth-header h1 { font-size: 1.75rem; margin-bottom: 6px; }
+.auth-header p { font-size: 0.9rem; color: var(--text-muted); }
+
+.auth-form { display: flex; flex-direction: column; gap: var(--space-md); }
+.input-wrap { position: relative; }
+.input-wrap .form-input { padding-right: 44px; }
+.pw-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+.pw-toggle:hover { color: var(--text-primary); }
+.forgot-link { font-size: 0.8rem; color: var(--sage-600); }
+.forgot-link:hover { text-decoration: underline; }
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.auth-footer a { font-weight: 500; }
